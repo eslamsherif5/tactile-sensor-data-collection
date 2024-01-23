@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!---=================================================================================================================================================================-->
+	<!-- load tool model -->
+	<param name="robot_description" command="$(find xacro)/xacro '$(find tactile_data_collection)/xacros/sample_tool.urdf.xacro'" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+	<!---=================================================================================================================================================================-->
+	<!-- Robot Node -->
+    <node pkg="tactile_data_collection" type="ros_robot.py" name="ros_robot"  output="screen"/>    
+	
+</launch>

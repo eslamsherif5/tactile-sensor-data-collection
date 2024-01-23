@@ -1,0 +1,6 @@
+__pycache__
+calibration_data/
+*.pyc
+.vscode
+*.json
+*.urdf.xacro
