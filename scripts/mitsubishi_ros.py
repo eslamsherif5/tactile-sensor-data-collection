@@ -31,7 +31,7 @@ class MitsubishiRobot(Robot):
         self.robot.start_program()
         
         
-    def move_TCP(self, pose_vec, vel, acc, slow=False):
+    def move_TCP(self, pose_vec, vel, acc, slow=True):
         position = [pose_vec[i] * 1000 for i in range(3)] #convert from m to mm
         rot_vec = pose_vec[3:]
 
@@ -46,7 +46,7 @@ class MitsubishiRobot(Robot):
         rpy = R.from_matrix(mitsubishi_R_tcp).as_euler('ZYX', degrees=True).tolist()
 
         if slow:
-            self.robot.set_speed(vel/5)
+            self.robot.set_speed(vel/10.)
         else:
             self.robot.set_speed(vel)
 

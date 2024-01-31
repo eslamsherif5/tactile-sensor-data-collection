@@ -3,11 +3,12 @@
 
 	<!---=================================================================================================================================================================-->
 	<!-- load tool model -->
-	<param name="robot_description" command="$(find xacro)/xacro '$(find tactile_data_collection)/xacros/sample_tool.urdf.xacro'" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find tactile_data_collection)/xacros/miniaturized_spherical_tactile_sensor.urdf.xacro'" />
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
 	<!---=================================================================================================================================================================-->
 	<!-- Robot Node -->
     <node pkg="tactile_data_collection" type="ros_robot.py" name="ros_robot"  output="screen"/>    
-	
+    <!-- <node pkg="tactile_data_collection" type="main.py" name="data_generator"  output="screen"/>     -->
+	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find tactile_data_collection)/rviz/rviz_config.rviz" />	
 </launch>

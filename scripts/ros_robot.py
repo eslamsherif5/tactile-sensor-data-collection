@@ -10,7 +10,7 @@ from std_msgs.msg import Float64, Bool
 from std_srvs.srv import Empty
 import tf2_ros
 import datetime
-from ros_robot_pkg.srv import moveRobot, desiredTCP, pegHole, setValue, moveRobotRelative
+from tactile_data_collection.srv import moveRobot, desiredTCP, pegHole, setValue, moveRobotRelative
 from scipy.spatial.transform import Rotation as R
 from kinematics import RobotKinematics
 import time
@@ -99,8 +99,8 @@ class RosRobot:
         # self.acc = 0.1
         # self.stop_acc = 0.3
         
-        self.vel = 0.15
-        self.acc = 0.15
+        self.vel = 0.05
+        self.acc = 0.01
         self.stop_acc = 0.1
 
         self.cmd_velocity_vector = []

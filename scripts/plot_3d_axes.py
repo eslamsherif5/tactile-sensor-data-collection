@@ -67,10 +67,6 @@ class Frame:
         arrow_direction = (np.array([ref_frame_xyz]) - np.array([this_frame_xyz])).tolist()[0]
 
         # Plot an arrow from the parent frame to the current frame
-        print("this_frame_xyz")
-        print(*this_frame_xyz)
-        print("arrow_direction")
-        print(arrow_direction)
         ax.quiver(this_frame_xyz[0], this_frame_xyz[1], this_frame_xyz[2],
                   arrow_direction[0], arrow_direction[1], arrow_direction[2],
                   color='gray', linestyle='dashed', arrow_length_ratio=0.1, linewidths=1)
